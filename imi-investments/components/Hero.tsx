@@ -1,0 +1,131 @@
+"use client";
+
+import { Playfair_Display, DM_Sans } from 'next/font/google'
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair',
+})
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  variable: '--font-dm-sans',
+})
+
+const MAROON = '#800000'
+
+const bgPattern = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M0 48L48 0M-12 12L12 -12M36 60L60 36' stroke='%23800000' stroke-width='0.6' opacity='0.07'/%3E%3C/svg%3E")`
+
+const badges = [
+  {
+    label: 'Guaranteed Rent',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={MAROON} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      </svg>
+    ),
+  },
+  {
+    label: 'No Hidden Fees',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={MAROON} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <polyline points="20 6 9 17 4 12" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Council-Backed',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={MAROON} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+        <polyline points="9 22 9 12 15 12 15 22" />
+      </svg>
+    ),
+  },
+]
+
+export default function Hero() {
+  return (
+    <>
+      <style>{`
+        @keyframes heroFadeIn {
+          from { opacity: 0; transform: translateY(18px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        .hero-fade {
+          animation: heroFadeIn 0.8s ease both;
+        }
+        .hero-fade-1 { animation-delay: 0.05s; }
+        .hero-fade-2 { animation-delay: 0.2s; }
+        .hero-fade-3 { animation-delay: 0.35s; }
+        .hero-fade-4 { animation-delay: 0.5s; }
+        html { scroll-behavior: smooth; }
+      `}</style>
+
+      <section
+        className={`${playfair.variable} ${dmSans.variable} relative min-h-screen flex items-center justify-center bg-white overflow-hidden`}
+        style={{ backgroundImage: bgPattern, backgroundSize: '48px 48px' }}
+      >
+        <div className="relative z-10 max-w-3xl mx-auto px-6 py-12 text-center">
+
+          {/* Headline */}
+          <h1
+            className="hero-fade hero-fade-1 text-5xl md:text-6xl font-bold leading-tight tracking-tight text-gray-900"
+            style={{ fontFamily: 'var(--font-playfair)' }}
+          >
+            Guaranteed Rent.{' '}
+            <span style={{ color: MAROON }}>Zero Hassle.</span>
+            {' '}Backed by the Council.
+          </h1>
+
+          {/* Sub-headline */}
+          <p
+            className="hero-fade hero-fade-2 mt-6 text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto"
+            style={{ fontFamily: 'var(--font-dm-sans)' }}
+          >
+            IMIinvestments partners with private landlords to provide secure, long-term
+            social housing — giving you reliable monthly rent with all the stress taken
+            care of.
+          </p>
+
+          {/* CTA Buttons */}
+          <div
+            className="hero-fade hero-fade-3 mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+            style={{ fontFamily: 'var(--font-dm-sans)' }}
+          >
+            <a
+              href="#contact"
+              className="inline-block px-7 py-3.5 rounded-md text-white font-semibold text-base transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+              style={{ backgroundColor: MAROON, outlineColor: MAROON }}
+            >
+              See If Your Property Qualifies
+            </a>
+            <a
+              href="#how-it-works"
+              className="inline-block px-7 py-3.5 rounded-md font-semibold text-base border-2 transition-colors hover:bg-[#80000010] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+              style={{ color: MAROON, borderColor: MAROON, outlineColor: MAROON }}
+            >
+              How It Works
+            </a>
+          </div>
+
+          {/* Trust Badges */}
+          <div
+            className="hero-fade hero-fade-4 mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10"
+            style={{ fontFamily: 'var(--font-dm-sans)' }}
+          >
+            {badges.map(({ label, icon }) => (
+              <div key={label} className="flex items-center gap-2">
+                {icon}
+                <span className="text-sm font-semibold" style={{ color: MAROON }}>
+                  {label}
+                </span>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+    </>
+  )
+}

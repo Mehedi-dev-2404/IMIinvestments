@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/* ============================================================
+   THEME — Tailwind v4 CSS-based config
+   ============================================================ */
+@theme {
+  /* Colour palette */
+  --color-maroon:       #7B1C2E;
+  --color-maroon-light: #9B2335;
+  --color-maroon-dark:  #5A1220;
+  --color-off-white:    #FAF9F7;
+  --color-light-grey:   #F4F1EE;
+  --color-text-dark:    #1A1A1A;
+  --color-text-muted:   #6B6B6B;
+
+  /* Font families (populated by next/font CSS variables) */
+  --font-heading: var(--font-playfair), Georgia, serif;
+  --font-body:    var(--font-dm-sans), system-ui, sans-serif;
+}
+
+/* ============================================================
+   CSS CUSTOM PROPERTIES
+   ============================================================ */
+:root {
+  --color-primary:    #7B1C2E;
+  --color-primary-hover: #9B2335;
+  --color-primary-deep:  #5A1220;
+  --color-bg:         #FAF9F7;
+  --color-surface:    #F4F1EE;
+  --color-text:       #1A1A1A;
+  --color-text-muted: #6B6B6B;
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family:      var(--font-body);
+  color:            #1A1A1A;
+  background-color: #FAF9F7;
+  -webkit-font-smoothing:  antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
