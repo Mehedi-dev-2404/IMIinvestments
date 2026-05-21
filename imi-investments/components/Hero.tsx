@@ -12,15 +12,16 @@ const dmSans = DM_Sans({
   variable: '--font-dm-sans',
 })
 
-const MAROON = '#800000'
+const NAVY = '#1a2942'
+const GOLD = '#b8924a'
 
-const bgPattern = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M0 48L48 0M-12 12L12 -12M36 60L60 36' stroke='%23800000' stroke-width='0.6' opacity='0.07'/%3E%3C/svg%3E")`
+const bgPattern = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M0 48L48 0M-12 12L12 -12M36 60L60 36' stroke='%231a2942' stroke-width='0.6' opacity='0.05'/%3E%3C/svg%3E")`
 
 const badges = [
   {
     label: 'Guaranteed Rent',
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={MAROON} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={NAVY} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
       </svg>
     ),
@@ -28,7 +29,7 @@ const badges = [
   {
     label: 'No Hidden Fees',
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={MAROON} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={NAVY} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <polyline points="20 6 9 17 4 12" />
       </svg>
     ),
@@ -36,7 +37,7 @@ const badges = [
   {
     label: 'Council-Backed',
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={MAROON} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={NAVY} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
         <polyline points="9 22 9 12 15 12 15 22" />
       </svg>
@@ -66,15 +67,15 @@ export default function Hero() {
         className={`${playfair.variable} ${dmSans.variable} relative min-h-screen flex items-center justify-center bg-white overflow-hidden`}
         style={{ backgroundImage: bgPattern, backgroundSize: '48px 48px' }}
       >
-        <div className="relative z-10 max-w-3xl mx-auto px-6 py-12 text-center">
+        <div className="relative z-10 max-w-3xl mx-auto px-6 py-6 text-center">
 
           {/* Headline */}
           <h1
-            className="hero-fade hero-fade-1 text-5xl md:text-6xl font-bold leading-tight tracking-tight text-gray-900"
-            style={{ fontFamily: 'var(--font-playfair)' }}
+            className="hero-fade hero-fade-1 text-5xl md:text-6xl font-bold leading-tight tracking-tight"
+            style={{ fontFamily: 'var(--font-playfair)', color: NAVY }}
           >
             Guaranteed Rent.{' '}
-            <span style={{ color: MAROON }}>Zero Hassle.</span>
+            <span style={{ color: GOLD }}>Zero Hassle.</span>
             {' '}Backed by the Council.
           </h1>
 
@@ -96,14 +97,20 @@ export default function Hero() {
             <a
               href="#contact"
               className="inline-block px-7 py-3.5 rounded-md text-white font-semibold text-base transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-              style={{ backgroundColor: MAROON, outlineColor: MAROON }}
+              style={{ backgroundColor: GOLD, outlineColor: GOLD }}
             >
               See If Your Property Qualifies
             </a>
             <a
               href="#how-it-works"
-              className="inline-block px-7 py-3.5 rounded-md font-semibold text-base border-2 transition-colors hover:bg-[#80000010] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-              style={{ color: MAROON, borderColor: MAROON, outlineColor: MAROON }}
+              className="inline-block px-7 py-3.5 rounded-md font-semibold text-base border-2 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+              style={{ color: NAVY, borderColor: NAVY, outlineColor: NAVY }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.backgroundColor = `${NAVY}10`
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.backgroundColor = 'transparent'
+              }}
             >
               How It Works
             </a>
@@ -117,7 +124,7 @@ export default function Hero() {
             {badges.map(({ label, icon }) => (
               <div key={label} className="flex items-center gap-2">
                 {icon}
-                <span className="text-sm font-semibold" style={{ color: MAROON }}>
+                <span className="text-sm font-semibold" style={{ color: NAVY }}>
                   {label}
                 </span>
               </div>

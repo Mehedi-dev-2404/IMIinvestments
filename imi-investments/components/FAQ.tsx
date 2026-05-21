@@ -73,7 +73,7 @@ function FAQItem({
         >
           <path
             d="M5 7.5L10 12.5L15 7.5"
-            stroke="#7B1C2E"
+            stroke="#b8924a"
             strokeWidth="1.75"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -104,12 +104,12 @@ export default function FAQ() {
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <section id="faq" style={{ backgroundColor: "#F4F1EE" }} className="py-20 px-6">
+    <section id="faq" style={{ backgroundColor: "#f7f5f0" }} className="py-20 px-6">
       <div className="max-w-[780px] mx-auto">
         {/* Label */}
         <p
           className="text-xs font-semibold tracking-widest uppercase mb-4"
-          style={{ color: "#7B1C2E" }}
+          style={{ color: "#1a2942" }}
         >
           Common Questions
         </p>

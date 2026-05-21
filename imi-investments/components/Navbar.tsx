@@ -55,14 +55,14 @@ export default function Navbar() {
             <img
               src="/logo.png"
               alt="IMIinvestments"
-              height={40}
-              className="h-12 w-auto object-contain"
+              height={64}
+              className="h-16 w-auto object-contain"
               onError={() => setLogoError(true)}
             />
           ) : (
             <span
               className={`${playfair.className} text-2xl font-bold`}
-              style={{ color: "#7B1C2E" }}
+              style={{ color: "#1a2942" }}
             >
               IMIinvestments
             </span>
@@ -78,7 +78,7 @@ export default function Navbar() {
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
                   className="px-5 py-2 rounded-full text-sm font-medium text-white transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: "#7B1C2E" }}
+                  style={{ backgroundColor: "#1a2942" }}
                 >
                   {link.label}
                 </a>
@@ -136,7 +136,7 @@ export default function Navbar() {
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
                   className="block w-full px-6 py-4 text-sm font-medium text-white text-center"
-                  style={{ backgroundColor: "#7B1C2E" }}
+                  style={{ backgroundColor: "#1a2942" }}
                 >
                   {link.label}
                 </a>

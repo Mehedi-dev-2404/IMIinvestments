@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { Playfair_Display } from "next/font/google";
 
 const playfair = Playfair_Display({ subsets: ["latin"] });
@@ -109,7 +110,7 @@ export default function Benefits() {
         {/* Label */}
         <p
           className="text-xs font-semibold tracking-widest uppercase mb-4"
-          style={{ color: "#7B1C2E" }}
+          style={{ color: "#1a2942" }}
         >
           Why Landlords Choose Us
         </p>
@@ -138,7 +139,7 @@ function BenefitCard({
   title,
   description,
 }: {
-  Icon: () => JSX.Element;
+  Icon: () => React.ReactElement;
   title: string;
   description: string;
 }) {
@@ -154,8 +155,8 @@ function BenefitCard({
       onMouseEnter={(e) => {
         const el = e.currentTarget;
         el.style.transform = "translateY(-4px)";
-        el.style.boxShadow = "0 8px 24px rgba(123,28,46,0.12)";
-        el.style.borderTop = "3px solid #7B1C2E";
+        el.style.boxShadow = "0 8px 24px rgba(26,41,66,0.12)";
+        el.style.borderTop = "3px solid #b8924a";
         el.style.paddingTop = "calc(1.75rem - 2px)"; /* compensate border growth */
       }}
       onMouseLeave={(e) => {
@@ -167,7 +168,7 @@ function BenefitCard({
       }}
     >
       {/* Icon */}
-      <div style={{ color: "#7B1C2E" }}>
+      <div style={{ color: "#1a2942" }}>
         <Icon />
       </div>
 

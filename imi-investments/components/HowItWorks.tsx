@@ -31,14 +31,14 @@ export default function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      style={{ backgroundColor: "#F4F1EE" }}
+      style={{ backgroundColor: "#f7f5f0" }}
       className="py-20 px-6"
     >
       <div className="max-w-6xl mx-auto">
         {/* Label */}
         <p
           className="text-xs font-semibold tracking-widest uppercase mb-4"
-          style={{ color: "#6B1A1A" }}
+          style={{ color: "#b8924a" }}
         >
           The Process
         </p>
@@ -56,7 +56,7 @@ export default function HowItWorks() {
           {/* Connecting line — desktop only */}
           <div
             className="hidden md:block absolute top-7 left-0 right-0 h-px"
-            style={{ backgroundColor: "#6B1A1A", opacity: 0.3 }}
+            style={{ backgroundColor: "#b8924a", opacity: 0.3 }}
             aria-hidden="true"
           />
 
@@ -69,7 +69,7 @@ export default function HowItWorks() {
                 {/* Numbered circle */}
                 <div
                   className="w-14 h-14 rounded-full flex items-center justify-center text-white text-lg font-bold shrink-0 relative z-10 mb-5"
-                  style={{ backgroundColor: "#6B1A1A" }}
+                  style={{ backgroundColor: "#b8924a" }}
                 >
                   {step.number}
                 </div>

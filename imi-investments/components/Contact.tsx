@@ -7,7 +7,8 @@ import { Playfair_Display, DM_Sans } from 'next/font/google'
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' })
 const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans' })
 
-const MAROON = '#7B1C2E'
+const NAVY = '#1a2942'
+const GOLD = '#b8924a'
 const FORMSPREE_URL = 'https://formspree.io/f/YOURFORMID'
 
 type FormValues = {
@@ -22,15 +23,6 @@ function PhoneIcon() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="shrink-0 mt-0.5">
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.36 12 19.79 19.79 0 0 1 1.13 3.39 2 2 0 0 1 3.11 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-    </svg>
-  )
-}
-
-function EmailIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="shrink-0 mt-0.5">
-      <rect x="2" y="4" width="20" height="16" rx="2" />
-      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
     </svg>
   )
 }
@@ -79,7 +71,7 @@ export default function Contact() {
     <section
       id="contact"
       className={`${playfair.variable} ${dmSans.variable}`}
-      style={{ backgroundColor: MAROON, fontFamily: 'var(--font-dm-sans)' }}
+      style={{ backgroundColor: NAVY, fontFamily: 'var(--font-dm-sans)' }}
     >
       <div className="max-w-6xl mx-auto px-6 py-20 lg:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
@@ -103,19 +95,13 @@ export default function Contact() {
 
             <ul className="space-y-5" style={{ color: 'rgba(255,255,255,0.9)' }}>
               <li>
-                <a href="tel:+440000000000" className="flex items-start gap-3 hover:opacity-80 transition-opacity">
+                <a href="tel:+447305990621" className="flex items-start gap-3 hover:opacity-80 transition-opacity">
                   <PhoneIcon />
-                  <span>Call us: <span className="font-semibold">07700 000 000</span></span>
+                  <span>Call us: <span className="font-semibold">+44 7305 990621</span></span>
                 </a>
               </li>
               <li>
-                <a href="mailto:hello@imiinvestments.co.uk" className="flex items-start gap-3 hover:opacity-80 transition-opacity">
-                  <EmailIcon />
-                  <span className="font-semibold">info@imiinvestments.co.uk</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://wa.me/447700000000" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 hover:opacity-80 transition-opacity">
+                <a href="https://wa.me/447305990621" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 hover:opacity-80 transition-opacity">
                   <WhatsAppIcon />
                   <span>WhatsApp us</span>
                 </a>
@@ -129,9 +115,9 @@ export default function Contact() {
               <div className="flex flex-col items-center justify-center text-center py-12 gap-4">
                 <div
                   className="w-14 h-14 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: `${MAROON}15` }}
+                  style={{ backgroundColor: `${GOLD}20` }}
                 >
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={MAROON} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={GOLD} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
@@ -143,8 +129,8 @@ export default function Contact() {
             ) : (
               <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
                 <h3
-                  className="text-2xl font-bold text-gray-900 mb-6"
-                  style={{ fontFamily: 'var(--font-playfair)', color: MAROON }}
+                  className="text-2xl font-bold mb-6"
+                  style={{ fontFamily: 'var(--font-playfair)', color: NAVY }}
                 >
                   Send us an Enquiry
                 </h3>
@@ -158,7 +144,6 @@ export default function Contact() {
                     type="text"
                     placeholder="Jane Smith"
                     className={inputClass}
-                    style={{ focusRingColor: MAROON } as React.CSSProperties}
                     {...register('fullName', { required: 'Full name is required' })}
                   />
                   {errors.fullName && (
@@ -236,7 +221,7 @@ export default function Contact() {
                   type="submit"
                   disabled={isSubmitting}
                   className="w-full py-3 rounded-md text-white font-semibold text-sm tracking-wide transition-opacity hover:opacity-90 disabled:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-                  style={{ backgroundColor: MAROON, outlineColor: MAROON }}
+                  style={{ backgroundColor: GOLD, outlineColor: GOLD }}
                 >
                   {isSubmitting ? 'Sending…' : 'Send Enquiry'}
                 </button>

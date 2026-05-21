@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const navLinks = [
   { label: "How It Works", href: "#how-it-works" },
   { label: "Benefits", href: "#benefits" },
@@ -12,20 +14,21 @@ export default function Footer() {
     <footer
       style={{
         backgroundColor: "#1A1A1A",
-        borderTop: "2px solid #6B1A1A",
+        borderTop: "2px solid #b8924a",
       }}
     >
       <div className="max-w-6xl mx-auto px-6 py-10">
         <div className="flex flex-col items-center gap-8 md:flex-row md:items-center md:justify-between">
 
           {/* Left: logo + tagline */}
-          <div className="flex flex-col items-center gap-1 md:items-start">
-            <span
-              className="font-bold tracking-tight leading-none"
-              style={{ color: "#ffffff", fontSize: "1.25rem", height: "32px", lineHeight: "32px" }}
-            >
-              IMIinvestments
-            </span>
+          <div className="flex flex-col items-center gap-2 md:items-start">
+            <Image
+              src="/logo.png"
+              alt="IMIinvestments"
+              height={36}
+              width={120}
+              className="h-9 w-auto object-contain"
+            />
             <span
               className="text-xs tracking-wide"
               style={{ color: "#9ca3af" }}
