@@ -56,13 +56,13 @@ function FAQItem({
       <button
         onClick={onToggle}
         aria-expanded={isOpen}
-        className="w-full flex items-center justify-between gap-4 py-5 text-left"
+        className="w-full flex items-center justify-between gap-4 py-7 text-left"
       >
-        <span className="text-base font-semibold text-gray-900">{question}</span>
+        <span className="text-xl font-semibold text-gray-900">{question}</span>
         {/* Chevron */}
         <svg
-          width="20"
-          height="20"
+          width="24"
+          height="24"
           viewBox="0 0 20 20"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -92,7 +92,7 @@ function FAQItem({
           opacity: isOpen ? 1 : 0,
         }}
       >
-        <p className="pb-5 text-sm leading-relaxed text-gray-600">{answer}</p>
+        <p className="pb-7 text-base leading-relaxed text-gray-600">{answer}</p>
       </div>
     </div>
   );
@@ -104,7 +104,7 @@ export default function FAQ() {
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <section id="faq" style={{ backgroundColor: "#f7f5f0" }} className="py-20 px-6">
+    <section id="faq" style={{ backgroundColor: "#f7f5f0" }} className="py-16 px-6">
       <div className="max-w-[780px] mx-auto">
         {/* Label */}
         <p
@@ -116,7 +116,7 @@ export default function FAQ() {
 
         {/* Heading */}
         <h2
-          className={`${playfair.className} text-4xl md:text-5xl font-bold mb-12`}
+          className={`${playfair.className} text-5xl font-bold mb-8`}
           style={{ color: "#1a1a1a" }}
         >
           Everything You Need to Know

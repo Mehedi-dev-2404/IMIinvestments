@@ -17,7 +17,7 @@ export default function Footer() {
         borderTop: "2px solid #b8924a",
       }}
     >
-      <div className="max-w-6xl mx-auto px-6 py-10">
+      <div className="max-w-6xl mx-auto px-6 py-12">
         <div className="flex flex-col items-center gap-8 md:flex-row md:items-center md:justify-between">
 
           {/* Left: logo + tagline */}
@@ -25,12 +25,13 @@ export default function Footer() {
             <Image
               src="/logo.png"
               alt="IMIinvestments"
-              height={36}
-              width={120}
-              className="h-9 w-auto object-contain"
+              height={80}
+              width={240}
+              className="h-20 w-auto object-contain"
+              style={{ filter: 'brightness(0) invert(1)' }}
             />
             <span
-              className="text-xs tracking-wide"
+              className="text-base tracking-wide"
               style={{ color: "#9ca3af" }}
             >
               Social Housing Partner Programme
@@ -44,7 +45,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm transition-colors duration-150"
+                    className="text-base transition-colors duration-150"
                     style={{ color: "#d1d5db" }}
                     onMouseEnter={(e) =>
                       ((e.currentTarget as HTMLAnchorElement).style.color = "#ffffff")
@@ -62,7 +63,7 @@ export default function Footer() {
 
           {/* Right: copyright */}
           <p
-            className="text-xs text-center md:text-right"
+            className="text-base text-center md:text-right"
             style={{ color: "#6b7280" }}
           >
             &copy; 2026 IMIinvestments. All rights reserved.

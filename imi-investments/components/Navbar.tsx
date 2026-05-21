@@ -14,11 +14,18 @@ const navLinks = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [logoError, setLogoError] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 0);
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      const currentY = window.scrollY;
+      setScrolled(currentY > 0);
+      setHidden(currentY > lastY && currentY > 80);
+      lastY = currentY;
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -38,8 +45,12 @@ export default function Navbar() {
       className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${
         scrolled ? "shadow-[0_2px_12px_rgba(0,0,0,0.08)]" : ""
       }`}
+      style={{
+        transform: hidden ? "translateY(-100%)" : "translateY(0)",
+        transition: "transform 0.3s ease, box-shadow 0.3s ease",
+      }}
     >
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
         {/* Logo */}
         <a
           href="#"
@@ -55,8 +66,8 @@ export default function Navbar() {
             <img
               src="/logo.png"
               alt="IMIinvestments"
-              height={80}
-              className="h-20 w-auto object-contain"
+              height={128}
+              className="h-32 w-auto object-contain"
               onError={() => setLogoError(true)}
             />
           ) : (
@@ -77,7 +88,7 @@ export default function Navbar() {
                 <a
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="px-5 py-2 rounded-full text-sm font-medium text-white transition-opacity hover:opacity-90"
+                  className="px-8 py-3 rounded-full text-lg font-medium text-white transition-opacity hover:opacity-90"
                   style={{ backgroundColor: "#1a2942" }}
                 >
                   {link.label}
@@ -88,7 +99,7 @@ export default function Navbar() {
                 <a
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+                  className="text-lg font-medium text-gray-700 hover:text-gray-900 transition-colors"
                 >
                   {link.label}
                 </a>
@@ -135,7 +146,7 @@ export default function Navbar() {
                 <a
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="block w-full px-6 py-4 text-sm font-medium text-white text-center"
+                  className="block w-full px-6 py-4 text-lg font-medium text-white text-center"
                   style={{ backgroundColor: "#1a2942" }}
                 >
                   {link.label}
@@ -146,7 +157,7 @@ export default function Navbar() {
                 <a
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="block w-full px-6 py-4 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+                  className="block w-full px-6 py-4 text-lg font-medium text-gray-700 hover:bg-gray-50 transition-colors"
                 >
                   {link.label}
                 </a>

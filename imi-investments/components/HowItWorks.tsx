@@ -32,7 +32,7 @@ export default function HowItWorks() {
     <section
       id="how-it-works"
       style={{ backgroundColor: "#f7f5f0" }}
-      className="py-20 px-6"
+      className="py-24 px-6"
     >
       <div className="max-w-6xl mx-auto">
         {/* Label */}
@@ -45,17 +45,17 @@ export default function HowItWorks() {
 
         {/* Heading */}
         <h2
-          className={`${playfair.className} text-4xl md:text-5xl font-bold mb-16`}
+          className={`${playfair.className} text-5xl font-bold mb-8`}
           style={{ color: "#1a1a1a" }}
         >
           Simple. Transparent. Stress-Free.
         </h2>
 
         {/* Steps */}
-        <div className="relative">
-          {/* Connecting line — desktop only */}
+        <div className="relative mt-16">
+          {/* Connecting line — desktop only, aligned to circle centre (top-10 = 40px) */}
           <div
-            className="hidden md:block absolute top-7 left-0 right-0 h-px"
+            className="hidden md:block absolute top-10 left-0 right-0 h-px"
             style={{ backgroundColor: "#b8924a", opacity: 0.3 }}
             aria-hidden="true"
           />
@@ -68,7 +68,7 @@ export default function HowItWorks() {
               >
                 {/* Numbered circle */}
                 <div
-                  className="w-14 h-14 rounded-full flex items-center justify-center text-white text-lg font-bold shrink-0 relative z-10 mb-5"
+                  className="w-20 h-20 rounded-full flex items-center justify-center text-white text-2xl font-bold shrink-0 relative z-10 mb-5"
                   style={{ backgroundColor: "#b8924a" }}
                 >
                   {step.number}
@@ -76,14 +76,14 @@ export default function HowItWorks() {
 
                 {/* Title */}
                 <h3
-                  className="text-lg font-bold mb-2"
+                  className="text-xl font-bold mb-2"
                   style={{ color: "#1a1a1a" }}
                 >
                   {step.title}
                 </h3>
 
                 {/* Copy */}
-                <p className="text-sm leading-relaxed" style={{ color: "#4a4a4a" }}>
+                <p className="text-base leading-relaxed" style={{ color: "#4a4a4a" }}>
                   {step.copy}
                 </p>
               </li>

@@ -65,7 +65,7 @@ export default function Contact() {
   }
 
   const inputClass =
-    'w-full rounded-md border border-gray-200 px-4 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:border-transparent transition'
+    'w-full rounded-md border border-gray-200 px-4 py-4 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:border-transparent transition'
 
   return (
     <section
@@ -73,7 +73,7 @@ export default function Contact() {
       className={`${playfair.variable} ${dmSans.variable}`}
       style={{ backgroundColor: NAVY, fontFamily: 'var(--font-dm-sans)' }}
     >
-      <div className="max-w-6xl mx-auto px-6 py-20 lg:py-28">
+      <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
 
           {/* ── Left column ── */}
@@ -83,7 +83,7 @@ export default function Contact() {
             </p>
 
             <h2
-              className="text-4xl md:text-5xl font-bold leading-tight mb-6"
+              className="text-5xl font-bold leading-tight mb-6"
               style={{ fontFamily: 'var(--font-playfair)' }}
             >
               Ready to Talk? Let&apos;s See If Your Property Qualifies.
@@ -137,7 +137,7 @@ export default function Contact() {
 
                 {/* Full Name */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wide mb-1.5">
+                  <label className="block text-sm font-semibold text-gray-600 uppercase tracking-wide mb-1.5">
                     Full Name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -154,7 +154,7 @@ export default function Contact() {
                 {/* Phone + Email side by side */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wide mb-1.5">
+                    <label className="block text-sm font-semibold text-gray-600 uppercase tracking-wide mb-1.5">
                       Phone Number <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -168,7 +168,7 @@ export default function Contact() {
                     )}
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wide mb-1.5">
+                    <label className="block text-sm font-semibold text-gray-600 uppercase tracking-wide mb-1.5">
                       Email Address <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -188,7 +188,7 @@ export default function Contact() {
 
                 {/* Property Postcode */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wide mb-1.5">
+                  <label className="block text-sm font-semibold text-gray-600 uppercase tracking-wide mb-1.5">
                     Property Postcode <span className="text-gray-400 font-normal normal-case">(optional)</span>
                   </label>
                   <input
@@ -201,7 +201,7 @@ export default function Contact() {
 
                 {/* Message */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wide mb-1.5">
+                  <label className="block text-sm font-semibold text-gray-600 uppercase tracking-wide mb-1.5">
                     Message <span className="text-gray-400 font-normal normal-case">(optional)</span>
                   </label>
                   <textarea
@@ -220,7 +220,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3 rounded-md text-white font-semibold text-sm tracking-wide transition-opacity hover:opacity-90 disabled:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+                  className="w-full py-5 rounded-md text-white font-semibold text-lg tracking-wide transition-opacity hover:opacity-90 disabled:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
                   style={{ backgroundColor: GOLD, outlineColor: GOLD }}
                 >
                   {isSubmitting ? 'Sending…' : 'Send Enquiry'}
