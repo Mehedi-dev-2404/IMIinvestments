@@ -64,10 +64,10 @@ export default function Hero() {
       `}</style>
 
       <section
-        className={`${playfair.variable} ${dmSans.variable} relative min-h-screen flex items-center justify-center bg-white overflow-hidden`}
+        className={`${playfair.variable} ${dmSans.variable} relative pt-32 pb-20 bg-white overflow-hidden`}
         style={{ backgroundImage: bgPattern, backgroundSize: '48px 48px' }}
       >
-        <div className="relative z-10 max-w-3xl mx-auto px-6 py-6 text-center">
+        <div className="relative z-10 max-w-3xl mx-auto px-6 flex flex-col items-center justify-start text-center">
 
           {/* Headline */}
           <h1

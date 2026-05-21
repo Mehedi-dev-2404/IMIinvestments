@@ -55,8 +55,8 @@ export default function Navbar() {
             <img
               src="/logo.png"
               alt="IMIinvestments"
-              height={64}
-              className="h-16 w-auto object-contain"
+              height={80}
+              className="h-20 w-auto object-contain"
               onError={() => setLogoError(true)}
             />
           ) : (
